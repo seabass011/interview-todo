@@ -47,7 +47,7 @@ def search_todos(ix, query_string, sort_by="title", sort_order="asc"):
 
         terms = []
         for term in query_string.split():
-            terms.append(f"{term}*")
+            terms.append(f"*{term}*")
 
         query_string = " OR ".join(terms)
         query = parser.parse(query_string)
